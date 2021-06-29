@@ -1,0 +1,52 @@
+<div class="main">
+    <div class="">
+        <div class="jumbotron">
+            <h1>Add Lab</h1>
+            <p>Add a lab to the system</p>
+            <form action="/admin/adminaddlab" method="POST">
+                <div class="form-group">
+                    <label for="s1">Lab ID</label>
+                    <input type="number" class="form-control" name="par1" id="s1" pattern="[0-9]{6,11}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="s2">Address</label>
+                    <input type="text" class="form-control" name="par2" id="s2" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="s3">Lab Name</label>
+                    <input type="text" class="form-control" name="par3" pattern="[A-Za-z]{1,100}" id="s3" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="s4">Phone Number</label>
+                    <input class="form-control" type="tel" name="par4" pattern="[0-9]{10}" id="s4" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+        </div>
+            <div class="jumbotron">
+            <h1>Remove Lab</h1>
+            <p>Remove a lab from the system</p>
+            <form action="/admin/adminremovelab" method="POST">
+                <div class="form-group">
+                    <label for="s1">Lab ID to Remove</label>
+                    <select class="form-control" id="s1" name="par1">
+                        {{#each ld}}
+                        <option>{{lab_id}}</option>
+                        {{else}}
+                        <option>No option</option>
+                        {{/each}}
+                    </select>
+                </div>
+                {{#if ld}}
+                <button type="submit" class="btn btn-danger">Remove</button>
+                {{/if}}
+            </form>
+
+        </div>
+    </div>
+</div>

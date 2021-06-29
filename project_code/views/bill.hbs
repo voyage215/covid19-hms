@@ -1,0 +1,27 @@
+<div style="margin-top:100px;" class="mb-4">
+    <div class="container">
+        <h1 class="text-center"> Your Medical Bills</h1>
+        {{#each bill_info}}
+        <div class="row">
+<div class="col-8 offset-2 mt-4">
+        <div class="card">
+            <div class="card-header text-center">
+                Bill ID: {{bill_id}}
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                                <li class="list-group-item">Receipt Number: <strong>{{receipt_number}}</strong></li>
+                                <li class="list-group-item">Total Charge: <strong>{{total_charge}}</strong></li>
+                                <li class="list-group-item">Bill Status: <strong>{{bill_status}}</strong></li>
+                                <li class="list-group-item">Transaction method: <strong>{{transaction_method}}</strong></li>
+                                <li class="list-group-item">Bill Date: <strong>{{date_short bill_date}}</strong></li>
+                            </ul> 
+            </div>
+        </div>
+    </div>
+</div>
+{{else}}
+<p> Sorry you have no billing history! </p>
+{{/each}}
+    </div>
+</div>

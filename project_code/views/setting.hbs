@@ -1,0 +1,64 @@
+<div style="margin-top:100px;" class="mb-4">
+    <div class="container">
+        <h1 class="text-center"> Profile Information</h1>
+        <div class="row">
+            <div class="col-8 offset-2 mt-4">
+                <div class="card">
+                    <div class="card-header text-center">
+                        Update Profile Information
+                    </div>
+                    <div class="card-body">
+                
+                        <form action="/utilities/changefn" method="POST">
+                            <div class="form-group">
+                                <label class="form-control-label">FIRST NAME: {{piinfo.first_name}}</label>
+                                <input type="text" class="form-control" name="firstname" pattern="[A-Za-z]{1,30}" required>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">Change First Name</button>
+                        
+                        </form><br/>
+                        <form action="/utilities/changeln" method="POST">
+                            <div class="form-group">
+                                <label class="form-control-label">LAST NAME: {{piinfo.last_name}}</label>
+                                <input type="text" class="form-control" name="lastname" name="lastname" pattern="[A-Za-z]{1,30}" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">Change Last Name</button>
+                        </form>
+                        <form action="/utilities/changeage" method="POST" class="mt-4">
+                            <div class="form-group">
+                                <label class="form-control-label">AGE: {{piinfo.age}}</label>
+                                <input type="number" class="form-control" name="age" min="1" max="99" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">Change Age</button>
+                        </form>
+                        <form action="/utilities/changepn" method="POST" class="mt-4">
+                            <div class="form-group">
+                                <label class="form-control-label">PHONE NUMBER: +1 {{piinfo.phone_number}}</label>
+                                <input class="form-control" type="tel" name="phone" pattern="[0-9]{10}" required>
+
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">Change Phone Number</button>
+                        </form>
+                        <form action="/utilities/changebg" method="POST" class="mt-4">
+                            <div class="form-group">
+                            <label class="form-control-label">BLOOD GROUP: {{piinfo.blood_group}}</label>
+                            <select class="form-control" name="bloodgroup" required>
+                                <option>O+ve</option>
+                                <option>O-ve</option>
+                                <option>A+ve</option>
+                                <option>A-ve</option>
+                                <option>B+ve</option>
+                                <option>B-ve</option>
+                                <option>AB+ve</option>
+                                <option>AB-ve</option>
+                            </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">Change Blood Group</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+<html>
+<head>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/stylesheets/admin.css" type="text/css">
+
+</head>
+<body>
+
+    <script>
+        $('#menu-action').click(function() {
+  $('.sidebar').toggleClass('active');
+  $('.main').toggleClass('active');
+  $(this).toggleClass('active');
+
+  if ($('.sidebar').hasClass('active')) {
+    $(this).find('i').addClass('fa-close');
+    $(this).find('i').removeClass('fa-bars');
+  } else {
+    $(this).find('i').addClass('fa-bars');
+    $(this).find('i').removeClass('fa-close');
+  }
+});
+
+// Add hover feedback on menu
+$('#menu-action').hover(function() {
+    $('.sidebar').toggleClass('hovered');
+});
+    </script>    
+<div class="header">
+  <a href="/admin" id="menu-action">
+    <i class="fa fa-bars"></i>
+    <span>Close</span>
+  </a>
+  <div class="logo">
+    SUPER USER
+    <a href="/"><button class="btn btn-primary ml-3 mb-1">Home</button></a>
+  </div>
+</div>
+<div class="sidebar">
+  <ul>
+    <li><a href="/admin/adminaduser"><i class="fa fa-wheelchair"></i><span>Add/Remove Patient</span></a></li>
+    <li><a href="/admin/adminaddoctor"><i class="fa fa-user-md"></i><span>Add/Remove Doctor</span></a></li>
+    <li><a href="/admin/adminadlab"><i class="fa fa-briefcase"></i><span>Add/Remove Lab</span></a></li>
+    <li><a href="/admin/adminadroom"><i class="fa fa-building"></i><span>Add/Remove Room</span></a></li>
+    <li><a href="/admin/adminviz"><i class="fa fa-bolt"></i><span>Statistics Dashboard</span></a></li>
+    </ul>
+</div>
+
+{{{body}}}
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<div class="main">
+  <div class="">
+    <div class="jumbotron">
+      <h1>Add Doctor</h1>
+      <p>Add a doctor to the system</p>
+    <form action="/admin/adminadddoc" method="POST">
+        <div class="form-group">
+            <label for="s1">Doctor ID</label>
+            <input type="number" class="form-control" name="par1" id="s1" pattern="[0-9]{6,11}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="s2">First Name</label>
+            <input type="text" class="form-control" name="par2" pattern="[A-Za-z]{1,100}" id="s2" required>
+        </div>
+
+        <div class="form-group">
+            <label for="s3">Last Name</label>
+            <input type="text" class="form-control" name="par3" pattern="[A-Za-z]{1,100}" id="s3" required>
+        </div>
+
+        <div class="form-group">
+            <label for="s4">Age</label>
+            <input type="number" class="form-control" name="par4" min="1" max="99" id="s4" required>
+        </div>
+
+        <div class="form-group">
+            <label for="s5">Gender</label>
+            <select class="form-control" id="s5" name="par5">
+                <option>M</option>
+                <option>F</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="s6">Address</label>
+            <input type="text" class="form-control" name="par6" id="s6" required>
+        </div>
+
+        <div class="form-group">
+            <label for="s7">Highest Education Degree</label>
+            <input class="form-control" type="text" name="par7" id="s7" pattern="[A-Za-z. ]{1,100}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="s8">Work Experience</label>
+            <input type="number" class="form-control" name="par8" min="1" max="99" id="s8" required>
+        </div>
+
+        <div class="form-group">
+            <label for="s9">Username</label>
+            <input type="text" class="form-control" name="par9" pattern="[A-Za-z]{1,50}" id="s9" required>
+        </div>
+
+        <div class="form-group">
+            <label for="s10">Password</label>
+            <input type="password" class="form-control" name="par10" id="s10" required>
+        </div>
+
+        <div class="form-group">
+            <label for="s11">Specialization</label>
+            <input class="form-control" type="text" name="par11" id="s11" pattern="[A-Za-z ]{1,100}" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    </div>
+    <div class="jumbotron">
+            <h1>Remove Doctor</h1>
+            <p>Remove a doctor from the system</p>
+            <form action="/admin/adminremovedoctor" method="POST">
+                <div class="form-group">
+                    <label for="s1">Doctor ID to Remove</label>
+                    <select class="form-control" id="s1" name="par1">
+                        {{#each dd}}
+                        <option>{{doctor_id}}</option>
+                        {{else}}
+                        <option>No option</option>
+                        {{/each}}
+                    </select>
+                </div>
+                {{#if dd}}
+                <button type="submit" class="btn btn-danger">Remove</button>
+                {{/if}}
+            </form>
+
+        </div>
+  </div>
+</div>
+

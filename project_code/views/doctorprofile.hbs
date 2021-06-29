@@ -1,0 +1,54 @@
+
+<div class="container mt-5 py-5">
+<div class="row">
+    <div class="col-4">
+    <div class="card">
+    <div class="card-body">
+        <h5 class="card-title pl-3"> Welcome, {{information.first_name}} {{information.last_name}}</h5>
+        <p class="card-text pl-3"> Weather: {{condition}}, {{temperature}}° C</p>
+        {{!-- <p class="card-text pl-3">Date: {{date}}</p> --}}
+        {{!-- <p class="card-text pl-3">Date: 25-11-2020</p> --}}
+    </div>
+    </div>
+    </div>
+    <div class="col-8">
+        <div class="card text-center">
+            <div class="card-header">
+                Patient Information
+            </div>
+            <div class="card-body">
+                <p class="card-text">All the patients old and new data can be accessed in one place.</p>
+                <a href="/utilities/patientrecord" class="btn btn-primary">Patients record</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+<div class="col-4 offset-4 mt-4">
+        <div class="card text-center">
+            <div class="card-header">
+                Rooms
+            </div>
+            <div class="card-body">
+                <div class="card-title"> Book a room for a day. For the safety of our doctors, staff and patients, the rooms are sanitized and periodically rotated for ease of management. </div>
+                <a href="/utilities/rooms1" class="btn btn-primary">Book Room</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-4 mt-4">
+        <div class="card text-center">
+            <div class="card-header">
+                Salary Records
+            </div>
+            <div class="card-body">
+                <p class="card-text">Your salary records are secured and can be accessed only by you.</p>
+                <br/><br/>
+                <a href="/utilities/salary1" class="btn btn-primary">Salary Records</a>
+            </div>
+        </div>
+    </div>
+</div>
+{{!-- <div class="row mt-2"> --}}
+
+{{!-- </div> --}}
+</div>

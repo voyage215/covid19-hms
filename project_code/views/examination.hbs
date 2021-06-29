@@ -1,0 +1,27 @@
+<div style="margin-top:100px;" class="mb-4">
+    <div class="container">
+        <h1 class="text-center"> Examination Records for {{examination_info.patient_id}}</h1>
+        {{#each examination_info}}
+        <div class="row">
+<div class="col-8 offset-2 mt-4">
+        <div class="card">
+            <div class="card-header text-center">
+                Prescription ID: {{prescription_id}}
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                                <li class="list-group-item">Prescription Date: <strong>{{date_short prescription_date}}</strong></li>
+                                <li class="list-group-item">Illness Description: <strong>{{illness_description}}</strong></li>
+                                <li class="list-group-item">Treatment Description: <strong>{{treatment_description}}</strong></li>
+                                <li class="list-group-item">Medicine Description: <strong>{{medicine_description}}</strong></li>
+                            </ul> 
+                
+            </div>
+        </div>
+    </div>
+</div>
+{{else}}
+<p> You have no examinations for this patient</p>
+{{/each}}
+    </div>
+</div>

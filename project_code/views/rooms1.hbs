@@ -1,0 +1,59 @@
+<div style="margin-top:100px;">
+    <div class="container">
+    <h1> Booking History </h1>
+    <div class="accordion" id="accordionExample">
+
+{{#each room_info}}
+  {{!-- <h4>{{title}}
+  <p>{{content}}</p>
+  {{#if ../user}}
+    {{../user.name}}
+  {{/if}} --}}
+<div class="card">
+  <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+                            data-target="#collapse{{@index}}" aria-expanded="true" aria-controls="collapse{{@index}}">
+                            Room booking detail {{inc @index}}
+                        </button>
+                    </h2>
+                </div>
+      <div id="collapse{{@index}}" class="collapse" aria-labelledby="heading{{@index}}"
+                    data-parent="#accordionExample">
+                    <div class="card-body">
+                        <div class="container">
+                            <p>Room number: {{room_id}}</p>
+        <p>Booking date: {{date_short booking_date}}</p>
+                        </div>
+
+                    </div>
+                </div>
+
+  </div>
+{{else}}
+  <p>There are no bookings</p>
+{{/each}}
+</div>
+  
+</div>
+<div class="container mt-4">
+<h1> Book room for today</h1>
+<div class="form-group">
+  <form action="/utilities/bookroom" method="POST">
+    <label for="roomselect">Rooms available</label>
+    <select class="form-control mt-4" id="roomselect" name="roomselect">
+      {{#each isinfo}}
+      <option>{{this}}</option>
+      {{else}}
+      <option>No rooms available to book now. Please try again later! :(</option>
+      {{/each}}
+    </select>
+   {{#if isinfo}} 
+  <button type="submit" class="btn btn-primary mt-4">Submit</button>
+  {{/if}}
+</form>
+  </div>
+</div>
+</div>
+
+

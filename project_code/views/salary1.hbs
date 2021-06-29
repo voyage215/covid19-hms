@@ -1,0 +1,96 @@
+<div style="margin-top:100px; margin-bottom:150px;">
+    <div class="container">
+        <h1> Salary History </h1>
+        <div class="accordion" id="accordionExample">
+            {{#each salary_info}}
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+                            data-target="#collapse{{@index}}" aria-expanded="true" aria-controls="collapse{{@index}}">
+                            Payslip for {{date_short salary_date}}
+                        </button>
+                    </h2>
+                </div>
+
+                <div id="collapse{{@index}}" class="collapse" aria-labelledby="heading{{@index}}"
+                    data-parent="#accordionExample">
+                    <div class="card-body">
+                        <div class="container">
+                            <h1>Payslip for <span class="all-caps-blue">{{date_short salary_date}}</span>
+                            </h1>
+                            <ul class="list-group">
+                                <li class="list-group-item">Name: <strong>{{first_name}}
+                                        {{last_name}}</strong></li>
+                                <li class="list-group-item">Pay period: <strong>End of
+                                        {{date_short salary_date}}</strong></li>
+                                <li class="list-group-item">Status: <strong>{{salary_status}}</strong></li>
+                            </ul>
+                            <div class="container-panel-md mt-3">
+                                <h2>Earnings total</h2>
+                                <table class="table">
+                                    <tr style="font-weight: bold;">
+                                        <td>PayslipID</td>
+                                        <td>Hourly Rate</td>
+                                        <td>Hours</td>
+                                        <td>Total</td>
+                                    </tr>
+                                    <tbody class="table-hover">
+                                        <tr>
+                                            <td>{{salary_id}}</td>
+                                            <td class="td-num">USD {{hourly_rate}}.00</td>
+                                            <td class="td-num">{{hours_worked}}</td>
+                                            <td class="td-num">USD
+                                                {{salarycalc hourly_rate hours_worked}}.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Total Pay</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="td-num">USD
+                                                {{salarycalc hourly_rate hours_worked}}.00</td>
+                                        </tr>
+                                        <td>Tax Deduction(20%)</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="td-num">- USD
+                                            {{taxcalc hourly_rate hours_worked}}.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Bonus</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="td-num">USD {{bonus}}.00</td>
+                                        </tr>
+                                    </tbody>
+                                    <tr>
+                                        <td>Grand total</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="td-num">USD
+                                            {{grandtotal hourly_rate hours_worked bonus}}.00
+                                        </td>
+                                    </tr>
+                                </table>
+                                <div class="input-group">
+                                    <span class="input-group-addon mr-3"><i class="fa fa-check-circle"></i></span>
+                                    <span class="form-control">Transferred to BOFA
+                                        xxxxxxxx<b>{{trunb bank_number}}</b>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            {{else}}
+            <p>There are no salary records for you.</p>
+            {{/each}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<div style="margin-top:100px;" class="mb-4">
+    <div class="container">
+        <h1 class="text-center"> Your Appointment History</h1>
+        {{#each appointment_info}}
+        <div class="row">
+<div class="col-8 offset-2 mt-4">
+        <div class="card">
+            <div class="card-header text-center">
+                Appointment ID: {{inc @index}}
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                                <li class="list-group-item">Doctor Name: <strong>{{first_name}} {{last_name}}</strong></li>
+                                <li class="list-group-item">Visiting Date: <strong>{{date_short visit_date}}</strong></li>
+                                <li class="list-group-item">Illness Description: <strong>{{illness_description}}</strong></li>
+                                <li class="list-group-item">Treatment Description: <strong>{{treatment_description}}</strong></li>
+                                <li class="list-group-item">Medicine Description: <strong>{{medicine_description}}</strong></li>
+                            </ul> 
+            </div>
+        </div>
+    </div>
+</div>
+{{else}}
+<p> Sorry you have no appointment history! </p>
+{{/each}}
+    </div>
+</div>
