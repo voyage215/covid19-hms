@@ -18,7 +18,9 @@ a) Install npm by typing the command "npm install -g npm" in the terminal.
 
 b) Check if it has successfully installed by running the command "npm -v" in the terminal. Again if there is an error, check on google for the error or contact me if there is an issue.
 
-c) That is all we need to download :) Now, type the command *npm install* in the terminal and wait for all the packages to be downloaded and installed. Done, the setup has finished.
+c) That is all we need to download :) Now, type the command **npm install** in the terminal and wait for all the packages to be downloaded and installed. Done, the setup has finished.
+
+
 ====================================================================================================================
 
 5) *Warning*: Before running the code, make sure the appropriate database (hospital) has been created in MYSQL 8.0.22. There will be an issue if MYSQL 5 or any other is used. Just execute the hospital_final_reports.sql file in the MYSQL Workbench, and make sure that the hospital database has been created.
@@ -41,32 +43,38 @@ The user can login with three different roles.
 
 Role 1: Patient
 Go to the login page > Enter in the patient creadentials. 
-As an example I have listed the usernames below and all have a common password for simplicity.
+
+As an example, I have listed the usernames below and all have a common password for simplicity.
+
+
 ====================================================================================================================
-*Patient Usernames*
+**Patient Usernames**
 sampat
 adampat
 sarahpat
 montypat
 amypat
 
-*Password*
+**Password**
 qwerty55
+
 ====================================================================================================================
 Once you are logged in, have a look around. There you can access patients "Appointments and Prescription History", "Lab Reports" and "Medical Bills" information. Logout, when done.
 
 Role 2: Doctor
 Go to the login page > Enter in the doctor credentials. 
 As an example I have listed the usernames below and all have a common password for simplicity.
+
 ====================================================================================================================
-*Doctor Usernames*
+**Doctor Usernames**
 lauradoc
 jamesdoc
 sandydoc
 seandoc
 
-*Password*
+**Password**
 qwerty123
+
 ====================================================================================================================
 Once you are logged in, have a look around. There you can access doctors "Patient Records", "Salary Records" and "Book a room". 
 Disclaimer: For the purpose of demonstration, I have fixed the room booking for the 25th of November, and only for that day. Due to time constraint and other subject project, I was not able to complete it, but in the future work, I will include dynamic room booking functionality that will handle bookings for different days.
@@ -74,12 +82,14 @@ Logout, when done.
 
 Role 3: Admin
 Go to the login page > Enter in the doctor credentials. 
+
 As an example I have listed the usernames below and all have a common password for simplicity.
+
 ====================================================================================================================
-*Doctor Usernames*
+**Doctor Usernames**
 admin
 
-*Password*
+**Password**
 admin
 ====================================================================================================================
 This feature was added just a day before submission, and has the least security functionality. I will keep updating it to make it better. But, on logging in with the admin credentials there is a dashboard that the admin can interact with. The left menu gives the limited but fulfilling options that the admin can perform on the database.
